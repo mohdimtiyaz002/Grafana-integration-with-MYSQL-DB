@@ -13,11 +13,19 @@ in Grafana one of the best things is we can add many data sources, data sources 
 Below are the steps involved in the process:
 
 a) create an ece instance, go to the security group and allow all traffic
+
 b) install Docker, enable docker then create a container for Grafana
+
 c) install MySQL and create a container for it
+
 d)use the 'exec' command to go inside the container
+
 e) create username and password for logging in database
+
 f) create a new database, use this db and create a table inside it then insert the data
+
 g)add data source in Grafana as MySQL
+
 h)add a dashboard with a panel
+
 i)write the query to extract the data from mysql and display it on the dashboard
