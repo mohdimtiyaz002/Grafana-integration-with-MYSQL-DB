@@ -1,0 +1,37 @@
+Step 1 -
+
+1)	Create Linux EC2 instance in aws
+2)	yum install docker
+3)	systemctl start docker
+4)	systemctl enable docker
+
+Step 2 – Change the Security Group of EC2 instance you created to ALLOW ALL TRAFFIC
+
+Step 3- Connect to your instance and Run the below command and give credentials
+
+docker run -d --name=grafana -p 3001:3000 -v grafana_config:/etc/grafana -v grafana_data:/var/lib/grafana -v grafana_logs:/var/log/grafana grafana/grafana
+
+Give password admin:admin and replace to new password 
+
+Step 4 - Install MySql
+Step 5 : docker run -d --name mysqldb -p 3306:3306 -v db_data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password mysql:latest
+
+Step 6 : docker exec -it mysqldb bash STEP 6 : mysql -u root -p password Step 7 : show databases;
+
+Step 7 : create database team;
+
+Step 8: USE team;
+
+Step 9 : CREATE TABLE person ( person_id INT NOT NULL PRIMARY KEY, fname VARCHAR(40) NULL, lname VARCHAR(40) NULL, age INT NOT NULL, created TIMESTAMP );
+
+Step 10 : Show tables; Step 3.9 :
+INSERT INTO person (person_id, fname, lname, age) VALUES (1,'Peter','Engineer', 32); INSERT INTO person (person_id, fname, lname, age) VALUES (2, 'Richard', 'Gaol', 27); INSERT INTO person (person_id, fname, lname, age) VALUES (3, 'Howard', 'Ken', 38); INSERT INTO person (person_id, fname, lname, age) VALUES (4, 'Lucy', 'Dey', 32);
+
+
+
+Step 11 : Add DataSource in Grafana as MYSQL DB [ Add the IP:port of database / DB name
+/ Username and password
+
+Step 12 : Add a dashboard with Add a panel
+
+
